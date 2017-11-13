@@ -79,6 +79,7 @@ $email = new EmailController();
 $data = array(
     'api_key'   =>  'yoursecretkey',
     'recipients'    =>  array('recipient1@example.com','recipient2@example.com'),
+    'recipients_cc'    =>  array('recipient1@example.com','recipient2@example.com'),
     'email_details' => array(
         'from'          =>  'from@example.com',
         'subject'       =>  'Hi [% NAME %], here is your account balance.',
@@ -88,12 +89,15 @@ $data = array(
     ),
     'tags'          =>  'AccountDeactivation, Verification',
     'X-APIHEADER' => array('UserID1','UserID2'),
+    'X-APIHEADER_CC' => array('UserID6','UserID7'),
     'settings' => array(
         'footer'        =>  true,
         'clicktrack'    =>  true,
         'opentrack'     =>  true,
         'unsubscribe'   =>  true,
         'bcc'           =>  'bcc@example.com',
+        'attachmentid'  =>  '1,2,4',
+		'template'      =>  '101',
     ),
     'attributes' => array(
         'NAME'          => array('NameOfRecipient1','NameOfRecipient2'),
